@@ -7,14 +7,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="navbar">
-    <h1>Drone & AI Gallery</h1>
-    <nav>
-      <button class="tab-btn active" data-tab="drone">Drone shots</button>
-      <button class="tab-btn" data-tab="ai">AI art</button>
-      <button class="tab-btn" data-tab="videos">Drone videos</button>
-    </nav>
-  </header>
+    <header class="navbar">
+        <div class="brand">
+            <img src="assets/king-of-drone-logo.png" alt="King of Drone logo" class="brand-logo">
+            <span class="brand-text">Drone & AI Gallery</span>
+
+        </div>
+
+        <button class="menu-toggle" aria-label="Otwórz menu">
+            ☰
+        </button>
+
+        <nav class="nav">
+            <button class="tab-btn active" data-tab="drone">Drone shots</button>
+            <button class="tab-btn" data-tab="ai">AI art</button>
+            <button class="tab-btn" data-tab="videos">Drone videos</button>
+            <!-- Link do CV – zewnętrzny, nie tab -->
+            <button class="tab-btn" data-tab="cv">CV autora</button>
+        </nav>
+    </header>
+
 
   <main>
     <section class="tab-section active" data-section="drone">
@@ -28,9 +40,22 @@
     </section>
 
     <section class="tab-section" data-section="videos">
-      <h2>Drone Videos</h2>
-      <p>Wkrótce pojawią się tu osadzone filmy z YouTube 🎥</p>
+        <h2>Drone Videos</h2>
+        <p class="section-desc">
+            Wybrane ujęcia z kanału King of Drone, osadzone bezpośrednio z YouTube.
+        </p>
+        <div id="video-gallery" class="video-grid"></div>
     </section>
+
+
+    <section class="tab-section" data-section="cv">
+        <iframe
+            src="https://krzysztof-broniszewski.github.io/krzysztof-cv"
+            class="cv-frame"
+            frameborder="0">
+        </iframe>
+    </section>
+
   </main>
 
   <footer>

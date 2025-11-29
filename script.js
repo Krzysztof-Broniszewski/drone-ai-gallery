@@ -8,6 +8,102 @@ const GITHUB = {
   branch: "main"                     // Gałąź (zmień jeśli inna)
 };
 
+function getVideoId(input) {
+  // jeśli to pełny link typu watch?v=ID
+  const match = String(input).match(/[?&]v=([^&]+)/);
+  if (match && match[1]) {
+    return match[1];
+  }
+  // w przeciwnym razie traktujemy to jako już-czyste ID
+  return String(input).trim();
+}
+
+function buildVideoGallery(containerId, videos) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  if (!videos || !videos.length) {
+    container.innerHTML = "<p style='color:#9ca3af;font-size:0.9rem'>Brak filmów do wyświetlenia.</p>";
+    return;
+  }
+
+  container.innerHTML = "";
+
+  videos.forEach((video) => {
+    const card = document.createElement("article");
+    card.className = "video-card";
+
+    const link = document.createElement("a");
+    const id = video.id.trim();
+    link.href = `https://www.youtube.com/watch?v=${id}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.className = "video-thumb-wrapper";
+
+    const thumb = document.createElement("img");
+    thumb.src = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+    thumb.alt = video.title || "Drone video thumbnail";
+    thumb.loading = "lazy";
+
+    const playIcon = document.createElement("div");
+    playIcon.className = "video-play-icon";
+    playIcon.textContent = "▶";
+
+    link.appendChild(thumb);
+    link.appendChild(playIcon);
+
+    const body = document.createElement("div");
+    body.className = "video-card-body";
+
+    const titleEl = document.createElement("h3");
+    titleEl.className = "video-title";
+    titleEl.textContent = video.title || "Drone video";
+
+    const metaEl = document.createElement("p");
+    metaEl.className = "video-meta";
+    metaEl.textContent = video.description || "";
+
+    body.appendChild(titleEl);
+    body.appendChild(metaEl);
+
+    card.appendChild(link);
+    card.appendChild(body);
+
+    container.appendChild(card);
+  });
+}
+
+
+
+// =============================
+// YouTube videos (Drone videos tab)
+// =============================
+
+const youtubeVideos = [
+  {
+    id: "c8EZ8vW3bok",
+    title: "Most Macharskiego Kraków - Nowa Huta",
+    description: "Ujęcie z kanału King of Drone."
+  },
+  {
+    id: "aQLS8jrc-J0",
+    title: "Śpiący Mnich - Słowacja",
+    description: "Ujęcie z kanału King of Drone."
+  },
+  {
+    id: "lA6pBAYNE0s",
+    title: "Klasztor Benedyktynów - Węgry - Balaton",
+    description: "Ujęcie z kanału King of Drone."
+  },
+  {
+    id: "6Cg9QohnTNc",
+    title: "Klasztor Benedyktynów - Węgry - Balaton",
+    description: "Ujęcie z kanału King of Drone."
+  }
+];
+
+
+
 // =============================
 // 2. Pobieranie listy plików z katalogu w repo
 // =============================
@@ -118,6 +214,24 @@ function setupTabs() {
   });
 }
 
+function setupMobileMenu() {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav");
+
+  if (!menuToggle || !nav) return;
+
+  menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
+
+  // zamykamy menu po kliknięciu w link/przycisk
+  nav.addEventListener("click", (e) => {
+    if (e.target.classList.contains("tab-btn") || e.target.classList.contains("nav-link")) {
+      nav.classList.remove("open");
+    }
+  });
+}
+
 // =============================
 // 6. Rok w stopce
 // =============================
@@ -134,14 +248,15 @@ function setCurrentYear() {
 // =============================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Budujemy galerie:
-  // ścieżki są względem root repo, tak jak w strukturze:
-  // images/drone  -> <div id="drone-gallery">
-  // images/ai     -> <div id="ai-gallery">
   buildGallery("images/drone", "drone-gallery", "Drone");
   buildGallery("images/ai", "ai-gallery", "AI");
 
+  buildVideoGallery("video-gallery", youtubeVideos);
+
   setupTabs();
+  setupMobileMenu();
   setCurrentYear();
 });
+
+
 
