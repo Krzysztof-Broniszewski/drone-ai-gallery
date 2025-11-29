@@ -57,35 +57,58 @@ main {
   display: block;
 }
 
+/* Prawdziwa mozaika: kolumny + różne wysokości kafelków */
 .gallery {
-  min-height: 200px;
-  border: 1px dashed #374151;
-  padding: 1rem;
-  border-radius: 8px;
+  column-width: 320px;      /* minimalna szerokość kolumny */
+  column-gap: 0.75rem;      /* ciaśniejsze odstępy */
   margin-top: 1rem;
 }
 
 .gallery-item {
-  margin-bottom: 1rem;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 0.75rem;
+  break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+/* Właściwy „kafelek” w środku */
+.gallery-media {
   background: var(--bg-card);
-  border-radius: 8px;
+  border-radius: 1rem;
   overflow: hidden;
   border: 1px solid #1f2937;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+  transform-origin: center;
+  transition: transform 0.18s ease-out, box-shadow 0.18s ease-out, border-color 0.18s ease-out;
 }
 
-.gallery-item img {
+/* obraz zawsze wypełnia kafelek, przycinany jak trzeba */
+.gallery-media img {
   width: 100%;
+  height: auto;
   display: block;
+  object-fit: contain;  /* albo po prostu usuń tę linię */
 }
 
+
+.gallery-media:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+  border-color: rgba(148, 163, 184, 0.4);
+}
+
+/* caption zostaje jaki był, tylko odstęp od kafelka */
 .gallery-caption {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.6rem 0.3rem;
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+
 
 .gallery-chip {
   background: var(--accent-teal);
@@ -275,6 +298,27 @@ main {
   font-size: 0.8rem;
   color: var(--text-muted);
 }
+
+/* LIGHTBOX – pełnoekranowy podgląd */
+#lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+
+#lightbox-overlay img {
+  max-width: 95vw;
+  max-height: 95vh;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+}
+
 
 footer {
   text-align: center;

@@ -135,10 +135,25 @@ function createGalleryItem(fileData, tagLabel) {
   const wrapper = document.createElement("figure");
   wrapper.className = "gallery-item";
 
+  // losowo wybieramy wariant wysokości
+  const media = document.createElement("div");
+  media.className = "gallery-media";
+
+  const r = Math.random();
+  if (r < 0.25) {
+    media.classList.add("gallery-media--short");
+  } else if (r > 0.75) {
+    media.classList.add("gallery-media--tall");
+  } else {
+    media.classList.add("gallery-media--medium");
+  }
+
   const img = document.createElement("img");
-  img.src = fileData.download_url;       // URL pliku z GitHuba
+  img.src = fileData.download_url;
   img.alt = fileData.name;
   img.loading = "lazy";
+
+  media.appendChild(img);
 
   const caption = document.createElement("figcaption");
   caption.className = "gallery-caption";
@@ -153,7 +168,7 @@ function createGalleryItem(fileData, tagLabel) {
   caption.appendChild(titleSpan);
   caption.appendChild(chip);
 
-  wrapper.appendChild(img);
+  wrapper.appendChild(media);
   wrapper.appendChild(caption);
 
   return wrapper;
@@ -257,6 +272,23 @@ document.addEventListener("DOMContentLoaded", () => {
   setupMobileMenu();
   setCurrentYear();
 });
+
+// LIGHTBOX: klik — pokaż duży obrazek
+document.addEventListener("click", (e) => {
+  if (e.target.tagName === "IMG" && e.target.closest(".gallery-media")) {
+    const fullSrc = e.target.src;
+    const overlay = document.getElementById("lightbox-overlay");
+    const img = overlay.querySelector("img");
+    img.src = fullSrc;
+    overlay.style.display = "flex";
+  }
+});
+
+// klik poza obrazkiem = zamknięcie lightboxa
+document.getElementById("lightbox-overlay").addEventListener("click", () => {
+  document.getElementById("lightbox-overlay").style.display = "none";
+});
+
 
 
 
