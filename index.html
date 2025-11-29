@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Drone & AI Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1>Drone & AI Gallery</h1>
+    <nav>
+      <button class="tab-btn active" data-tab="drone">Drone shots</button>
+      <button class="tab-btn" data-tab="ai">AI art</button>
+      <button class="tab-btn" data-tab="videos">Drone videos</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="tab-section active" data-section="drone">
+      <h2>Drone Photography</h2>
+      <div id="drone-gallery" class="gallery"></div>
+    </section>
+
+    <section class="tab-section" data-section="ai">
+      <h2>AI Artwork</h2>
+      <div id="ai-gallery" class="gallery"></div>
+    </section>
+
+    <section class="tab-section" data-section="videos">
+      <h2>Drone Videos</h2>
+      <p>Wkrótce pojawią się tu osadzone filmy z YouTube 🎥</p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Krzysztof – Drone & AI Gallery
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
