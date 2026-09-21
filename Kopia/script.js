@@ -320,118 +320,20 @@ document.addEventListener("DOMContentLoaded", () => {
   setCurrentYear();
 });
 
-// =============================
-// LIGHTBOX – podgląd + nawigacja
-// =============================
-
-let lightboxImages = [];
-let lightboxIndex = 0;
-
-function showLightboxImage(index) {
-  if (!lightboxImages.length) return;
-
-  // Zapętlenie galerii:
-  // po ostatnim zdjęciu przechodzimy do pierwszego
-  // przed pierwszym przechodzimy do ostatniego
-  lightboxIndex =
-    (index + lightboxImages.length) % lightboxImages.length;
-
-  const overlay = document.getElementById("lightbox-overlay");
-  const img = overlay.querySelector("img");
-
-  img.src = lightboxImages[lightboxIndex].src;
-  img.alt = lightboxImages[lightboxIndex].alt || "";
-
-  overlay.style.display = "flex";
-}
-
-
-// Kliknięcie zdjęcia w galerii
+// LIGHTBOX: klik — pokaż duży obrazek
 document.addEventListener("click", (e) => {
-
-  if (
-    e.target.tagName === "IMG" &&
-    e.target.closest(".gallery-media")
-  ) {
-
-    const gallery = e.target.closest(".gallery");
-
-    // Pobieramy zdjęcia tylko z aktualnej galerii.
-    // Drone i AI pozostają osobnymi galeriami.
-    lightboxImages = Array.from(
-      gallery.querySelectorAll(".gallery-media img")
-    );
-
-    lightboxIndex = lightboxImages.indexOf(e.target);
-
-    showLightboxImage(lightboxIndex);
+  if (e.target.tagName === "IMG" && e.target.closest(".gallery-media")) {
+    const fullSrc = e.target.src;
+    const overlay = document.getElementById("lightbox-overlay");
+    const img = overlay.querySelector("img");
+    img.src = fullSrc;
+    overlay.style.display = "flex";
   }
 });
 
-
-// Poprzednie zdjęcie
-document
-  .getElementById("lightbox-prev")
-  .addEventListener("click", (e) => {
-
-    e.stopPropagation();
-
-    showLightboxImage(lightboxIndex - 1);
-  });
-
-
-// Następne zdjęcie
-document
-  .getElementById("lightbox-next")
-  .addEventListener("click", (e) => {
-
-    e.stopPropagation();
-
-    showLightboxImage(lightboxIndex + 1);
-  });
-
-
-// Kliknięcie w duże zdjęcie nie zamyka lightboxa
-document
-  .querySelector("#lightbox-overlay img")
-  .addEventListener("click", (e) => {
-
-    e.stopPropagation();
-  });
-
-
-// Kliknięcie w ciemne tło zamyka lightbox
-document
-  .getElementById("lightbox-overlay")
-  .addEventListener("click", () => {
-
-    document.getElementById(
-      "lightbox-overlay"
-    ).style.display = "none";
-  });
-
-
-// Obsługa klawiatury
-document.addEventListener("keydown", (e) => {
-
-  const overlay =
-    document.getElementById("lightbox-overlay");
-
-  // Nic nie robimy, jeżeli lightbox nie jest otwarty
-  if (overlay.style.display !== "flex") return;
-
-  if (e.key === "ArrowLeft") {
-
-    showLightboxImage(lightboxIndex - 1);
-
-  } else if (e.key === "ArrowRight") {
-
-    showLightboxImage(lightboxIndex + 1);
-
-  } else if (e.key === "Escape") {
-
-    overlay.style.display = "none";
-  }
+// klik poza obrazkiem = zamknięcie lightboxa
+document.getElementById("lightbox-overlay").addEventListener("click", () => {
+  document.getElementById("lightbox-overlay").style.display = "none";
 });
 
 
