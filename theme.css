@@ -798,59 +798,16 @@ button {
     }
 }
 
-/* ==========================================
-   HEADER — NAPRAWA NAKŁADANIA ELEMENTÓW
-   ========================================== */
+/* KING OF DRONE — ograniczenie wielkości logo */
 
-.header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px 24px;
+.youtube-logo img {
+    width: 100px !important;
+    height: 65px !important;
+    object-fit: contain;
 }
 
-/* Logo i nazwisko zawsze czytelne */
-
-.wordmark {
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2;
-}
-
-/* Nawigacja nie nachodzi na logo */
-
-.site-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px 20px;
-    min-width: 0;
-}
-
-.site-nav a {
-    white-space: nowrap;
-}
-
-/* Kanał YouTube */
-
+.channel-logo,
 .youtube-logo {
-    flex-shrink: 0;
-}
-
-/* Zachowanie menu mobilnego */
-
-@media (max-width: 980px) {
-    .site-nav {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        flex-wrap: nowrap;
-        gap: 3px;
-    }
-
-    .site-nav.open {
-        display: flex;
-    }
+    border: none !important;
+    outline: none;
 }

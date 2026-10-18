@@ -28,7 +28,7 @@
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
         <nav id="primary-nav" class="site-nav" aria-label="Main navigation">${links}</nav>
         <a class="channel-logo youtube-logo" href="https://www.youtube.com/channel/UCCAHD3K9D9tyEpvwcsluTtA" target="_blank" rel="noopener noreferrer" aria-label="King of Drone — YouTube channel" title="King of Drone on YouTube">
-          <img src="${href('assets/king-of-drone-logo.svg')}" alt="King of Drone logo">
+          <img src="${href('assets/king-of-drone-logo.png')}" alt="King of Drone logo">
           <span class="youtube-logo-text"><strong>KING OF DRONE</strong><small>YOUTUBE CHANNEL ↗</small></span>
         </a>
       </div>
