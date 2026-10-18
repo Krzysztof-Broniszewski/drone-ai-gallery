@@ -408,3 +408,136 @@ footer {
     max-height: 92vh;
   }
 }
+
+
+/* ==========================================
+   FEATURED PROJECT — BLACK LUXURY
+   ========================================== */
+
+.featured-project {
+    width: 100%;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 24px;
+}
+
+.featured-project-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    overflow: hidden;
+    background: #0d0b09;
+    border: 1px solid rgba(197, 163, 93, 0.35);
+    border-radius: 12px;
+    text-decoration: none;
+    color: #f5efe2;
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.featured-project-card:hover {
+    border-color: #c5a35d;
+    box-shadow: 0 12px 45px rgba(197, 163, 93, 0.15);
+    transform: translateY(-4px);
+}
+
+.featured-project-image {
+    min-width: 0;
+    overflow: hidden;
+    background: #080808;
+}
+
+.featured-project-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.featured-project-card:hover .featured-project-image img {
+    transform: scale(1.04);
+}
+
+.featured-project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 48px 40px;
+}
+
+.featured-project-label {
+    color: #c5a35d;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+}
+
+.featured-project-content h2 {
+    margin: 22px 0;
+    color: #f0d89a;
+    font-family: Georgia, serif;
+    font-size: clamp(23px, 2.5vw, 36px);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.featured-project-content p {
+    margin: 0 0 30px;
+    color: #b8b0a5;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.featured-project-button {
+    display: inline-block;
+    padding: 14px 24px;
+    border: 1px solid #c5a35d;
+    color: #f0d89a;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.featured-project-card:hover .featured-project-button {
+    background: #c5a35d;
+    color: #080808;
+}
+
+.featured-project-card:focus-visible {
+    outline: 2px solid #f0d89a;
+    outline-offset: 5px;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .featured-project {
+        margin: 35px auto;
+        padding: 0 16px;
+    }
+
+    .featured-project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project-image img {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+    }
+
+    .featured-project-content {
+        padding: 30px 24px;
+    }
+
+    .featured-project-content h2 {
+        margin: 16px 0;
+    }
+}

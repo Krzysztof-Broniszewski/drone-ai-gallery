@@ -1,0 +1,16 @@
+WSPÓLNY NAVBAR — PACZKA DO PODMIANY
+
+Źródło: dostępna w rozmowie wersja portfolio_black_gold_logo.zip.
+UWAGA: pliki HTML pochodzą z tej wersji; jeśli od tego czasu zmieniałeś treść podstron, zrób kopię zapasową, bo ich podmiana nadpisze późniejsze zmiany.
+
+1. Rozpakuj archiwum do głównego katalogu repozytorium drone-ai-gallery, zachowując strukturę katalogów.
+2. Potwierdź nadpisanie plików HTML.
+3. Nie usuwaj istniejących plików theme.css, site.js, gallery.js, videos.js ani zdjęć.
+4. Otwórz stronę przez Live Server lub GitHub Pages (nie file://).
+5. Sprawdź wszystkie linki oraz hamburger na telefonie.
+
+Wszystkie strony korzystają z components/navbar.js i components/navbar.css.
+Menu: Home / AI Commercials / AI Art / Drone Photography / Drone Videos / CV.
+Logo YouTube odwołuje się do istniejącego assets/king-of-drone-logo.svg.
+Zachowano stare site.js, które obsługuje hamburger i rok w stopce.
+Plik components/navbar.css nadpisuje wybrane style theme.css, ale go nie modyfikuje.

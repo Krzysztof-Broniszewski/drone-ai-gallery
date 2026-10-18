@@ -1,41 +1,24 @@
-# Drone & AI Gallery
+# Krzysztof Broniszewski — AI Creative & Drone Portfolio
 
-Interaktywna galeria zdjęć z drona i grafik AI, z automatycznym ładowaniem obrazów z repozytorium GitHub, układem typu masonry, podglądem w lightboxie oraz sekcją z filmami z YouTube i zakładką z CV autora.
+Static multi-page website for GitHub Pages.
 
-**Live:**  
-https://krzysztof-broniszewski.github.io/drone-ai-gallery/
+## Deployment
 
----
+Copy all files from this package into the **root** of the existing `drone-ai-gallery` repository (not inside an extra `portfolio_black_gold` folder). Keep existing `images/drone`, `images/ai`, and any other existing media. Commit and push to `main`.
 
-## Funkcje
+Preview locally with VS Code Live Server using the root `index.html`. Gallery images are retrieved from the **published GitHub repository** through the GitHub Contents API, so new local images only appear after pushing.
 
-- 📂 **Automatyczna galeria** – wszystkie pliki `.jpg` / `.jpeg` / `.png` z katalogów:
-  - `images/drone`
-  - `images/ai`  
-  są pobierane przez GitHub API i wyświetlane bez ręcznego dopisywania ich w kodzie.
+## Pages
 
-- 🧱 **Masonry layout** – układ mozaiki (różne wysokości kafelków, brak „dziur”), wspólny dla zdjęć z drona i AI.
+- `/index.html` — Home
+- `/drone-photography/index.html` — drone photo gallery
+- `/ai-art/index.html` — AI art gallery
+- `/drone-videos/index.html` — original YouTube videos
+- `/cv/index.html` — existing CV embed + external link
+- `/projects/volcanic-perfume/index.html` — Black Luxury commercial
 
-- 🔍 **Lightbox** – kliknięcie na miniaturę otwiera powiększony obraz na ciemnym tle.
+## Files
 
-- 🎥 **Drone videos** – zakładka z kartami wideo, każda karta prowadzi do konkretnego filmu na YouTube (bez trzymania w repo ciężkich plików wideo).
+`theme.css` is the global black/gold theme; `site.js` handles the menu. `gallery.js` handles the GitHub API galleries and lightbox. `video-data.js` preserves original video IDs; `videos.js` builds video cards. The perfume page retains `project.css` and `project.js`.
 
-- 📄 **CV autora** – osobna zakładka z osadzoną stroną CV:
-  - https://krzysztof-broniszewski.github.io/krzysztof-cv
-
-- 🌙 **Dark theme** – całość zaprojektowana pod ciemny motyw (spójne z pozostałymi projektami).
-
----
-
-## Struktura projektu
-
-```text
-drone-ai-gallery/
-├─ index.html         # główny plik strony, layout, sekcje i zakładki
-├─ styles.css         # stylizacja (dark theme, masonry, lightbox, navbar)
-├─ script.js          # logika galerii, GitHub API, YouTube, lightbox, zakładki
-├─ assets/
-│  └─ king-of-drone-logo.png   # logo w nagłówku
-└─ images/
-   ├─ drone/         # zdjęcia z drona (JPG/PNG)
-   └─ ai/            # wygenerowane obrazy AI (JPG/PNG)
+The original King of Drone logo has not been included in the package because the binary logo was not among the supplied files. The redesigned site uses a typographic KB mark instead. The CV's own website is external and therefore retains its original internal styling.

@@ -1,4 +1,3 @@
-
 /* ==========================================
    BLACK LUXURY — BORN FROM FIRE
    AI Commercial Portfolio
@@ -445,3 +444,73 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* Shared site navigation and project layout adjustments */
+.project-header{display:none}.hero{padding-top:25px;min-height:calc(100vh - 78px)}.reference-grid img{padding:4px;background:#080808;box-shadow:0 10px 35px #0008}
+
+
+/* ==========================================
+   INTERACTIVE PRODUCTION WORKFLOW
+   ========================================== */
+.workflow{max-width:1200px;margin:0 auto 105px;padding:clamp(20px,3vw,40px);border:1px solid rgba(197,163,93,.28);background:linear-gradient(145deg,#17120c,#080808 75%);box-shadow:0 24px 75px #0008}
+.workflow-topline{display:flex;justify-content:space-between;gap:15px;margin-bottom:24px;color:var(--gold);font-size:10px;font-weight:600;letter-spacing:2px}
+.workflow-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:30px}
+.workflow-step{border:0;background:transparent;color:#918573;padding:0;text-align:left;cursor:pointer;font:600 10px Montserrat,sans-serif;letter-spacing:1px}
+.step-bar{display:block;height:4px;margin-bottom:12px;background:#3a3022;transition:background .25s,box-shadow .25s}
+.workflow-step.is-active .step-bar,.workflow-step.is-complete .step-bar{background:var(--gold);box-shadow:0 0 12px #c5a35d55}
+.workflow-step.is-active{color:var(--gold-light)}.workflow-step:hover{color:var(--ivory)}
+.workflow-feature{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(240px,.85fr);gap:clamp(22px,4vw,55px);align-items:center}
+.workflow-preview{position:relative;display:block;padding:0;border:1px solid #705632;background:#090909;cursor:zoom-in;overflow:hidden;min-width:0}
+.workflow-preview img{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;transition:opacity .25s,transform .4s}
+.workflow-preview:hover img{transform:scale(1.025)}
+.workflow-zoom{position:absolute;right:12px;bottom:12px;background:#080808db;color:var(--gold-light);padding:9px 12px;font:600 9px Montserrat,sans-serif;letter-spacing:1.4px}
+.workflow-eyebrow{color:var(--gold);font-size:10px;letter-spacing:2px}
+.workflow-copy h3{font:500 clamp(23px,2.8vw,38px) Cinzel,serif;color:var(--gold-light);margin:16px 0 18px}
+.workflow-copy p{color:var(--muted);font-size:13px;line-height:2;margin:0 0 28px}
+.workflow-actions{display:flex;flex-wrap:wrap;gap:10px}.workflow-arrow{padding:12px 15px;border:1px solid #826637;color:var(--gold-light);background:transparent;font:600 10px Montserrat,sans-serif;letter-spacing:1px;cursor:pointer}.workflow-arrow:disabled{opacity:.3;cursor:not-allowed}.workflow-arrow:not(:disabled):hover{background:#4a3519}
+.workflow-thumbnails{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.workflow-thumb{padding:3px;border:1px solid #54452f;background:#0b0907;cursor:pointer}.workflow-thumb[aria-pressed=true]{border-color:var(--gold-light)}.workflow-thumb img{display:block;width:110px;aspect-ratio:16/9;object-fit:cover}
+.reference-heading{margin-top:85px}.generated-grid{margin-bottom:50px}.generated-grid .gallery-tile,.reference-grid .gallery-tile{display:block;width:100%;padding:4px;border:1px solid rgba(197,163,93,.3);background:#080808;cursor:zoom-in;text-align:left}.generated-grid .gallery-tile:hover,.reference-grid .gallery-tile:hover{border-color:var(--gold)}.reference-grid .gallery-tile img{border:0;padding:0;box-shadow:none;border-radius:0;transform:none;width:100%;aspect-ratio:16/9;object-fit:cover}.gallery-tile span{display:block;padding:11px 7px 8px;color:var(--muted);font:500 10px Montserrat,sans-serif;letter-spacing:.7px}
+.project-lightbox[hidden]{display:none!important}.project-lightbox{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.96);padding:55px 70px;color:var(--ivory)}.project-lightbox figure{margin:0;max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:15px}.project-lightbox figure img{max-width:100%;max-height:calc(100dvh - 145px);object-fit:contain;box-shadow:0 0 40px #000}.project-lightbox figcaption{color:var(--gold-light);font-size:12px;text-align:center;letter-spacing:1px}.lightbox-close,.lightbox-nav{position:absolute;border:1px solid #7b623b;background:#110e0bcc;color:var(--gold-light);cursor:pointer}.lightbox-close{top:18px;right:22px;font-size:30px;width:48px;height:48px}.lightbox-nav{top:50%;transform:translateY(-50%);width:48px;height:58px;font-size:38px}.lightbox-prev{left:12px}.lightbox-next{right:12px}.lightbox-counter{position:absolute;bottom:16px;color:var(--muted);font-size:11px;letter-spacing:2px}body.lightbox-open{overflow:hidden}
+@media(max-width:850px){.workflow-feature{grid-template-columns:1fr}.workflow-copy h3{margin:12px 0}.workflow-thumbnails{margin-top:20px}}
+@media(max-width:600px){.workflow{margin-bottom:70px;padding:18px 12px}.workflow-steps{gap:5px}.workflow-step{font-size:8px;letter-spacing:0}.step-label{line-height:1.5;display:block}.workflow-thumb img{width:78px}.reference-heading{margin-top:65px}.project-lightbox{padding:70px 10px}.lightbox-nav{top:auto;bottom:18px;transform:none;width:43px;height:43px;font-size:28px}.lightbox-prev{left:10px}.lightbox-next{right:10px}.lightbox-counter{bottom:30px}.project-lightbox figure img{max-height:calc(100dvh - 180px)}}
+@media(prefers-reduced-motion:reduce){.workflow-preview img,.step-bar{transition:none}}
+
+/* Six-stage production presentation and technical materials */
+.workflow-steps{grid-template-columns:repeat(6,minmax(0,1fr));gap:9px}
+.workflow-step{font-size:9px;line-height:1.6}
+.production-notes{max-width:1100px;margin:0 auto 105px;padding:34px clamp(20px,4vw,55px);border-left:2px solid var(--gold);background:linear-gradient(100deg,#19130d,#0a0908)}
+.production-notes h3{font:500 clamp(24px,3vw,36px) Cinzel,serif;color:var(--gold-light);margin:0 0 18px}
+.production-notes p{font-size:13px;line-height:2;color:var(--muted);max-width:900px}
+.production-notes .production-footnote{font-size:11px;opacity:.8}
+.process-materials{margin:0 auto 90px;max-width:1200px}
+.process-assets .gallery-tile img{object-fit:contain;background:#100e0c}
+@media(max-width:850px){.workflow-steps{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:17px}}
+@media(max-width:520px){.workflow-step{font-size:8px}.production-notes{margin-bottom:70px;padding:22px 18px}}
+
+/* LOCAL PRODUCTION HARDWARE — BLACK LUXURY */
+.hardware-specs {
+  display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 22px;
+}
+.hardware-specs span {
+  display: inline-block; border: 1px solid rgba(197,163,93,.36);
+  background: rgba(197,163,93,.07); color: var(--gold-light, #f0d89a);
+  padding: 10px 13px; font: 600 10px/1.4 Montserrat, sans-serif;
+  letter-spacing: 1px;
+}
+@media (max-width: 620px) {
+  .hardware-specs { gap: 8px; }
+  .hardware-specs span { font-size: 9px; padding: 8px 10px; }
+}
+
+
+/* Stage 04: original audio samples / Stage 06: YouTube publication */
+.workflow-preview[hidden],.workflow-publication-link[hidden],.workflow-audio[hidden]{display:none!important}
+.workflow-publication-link{position:relative;display:block;border:1px solid rgba(197,163,93,.45);background:#090909;overflow:hidden;text-decoration:none}
+.workflow-publication-link img{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;transition:transform .3s}
+.workflow-publication-link:hover img{transform:scale(1.025)}
+.workflow-audio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.audio-sample{min-width:0;padding:18px;border:1px solid rgba(197,163,93,.3);background:#100d09}
+.audio-sample strong{display:block;color:var(--gold-light);font:600 12px/1.6 Montserrat,sans-serif;margin-bottom:6px}
+.audio-sample small{display:block;color:var(--muted);font:400 11px/1.6 Montserrat,sans-serif;margin-bottom:14px}
+.audio-sample audio{display:block;width:100%;max-width:100%;height:42px;accent-color:var(--gold)}
+@media(max-width:850px){.workflow-audio{grid-template-columns:1fr}}
