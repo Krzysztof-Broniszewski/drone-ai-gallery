@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "portraits",
+    "title": "Portraits & Fashion",
+    "description": "AI portraits, beauty and editorial imagery."
+  },
+  {
+    "slug": "sci-fi",
+    "title": "Sci-Fi & Cybernetics",
+    "description": "Robots, cybernetic characters and futuristic worlds."
+  },
+  {
+    "slug": "animals",
+    "title": "Animals & Nature",
+    "description": "Expressive animal portraits and natural details."
+  },
+  {
+    "slug": "cinematic",
+    "title": "Cinematic Scenes",
+    "description": "Dramatic compositions and visual storytelling."
+  }
+]

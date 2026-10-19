@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="From Portrait to Nightclub — five-stage AI image editing, background removal, inpainting and outpainting in ComfyUI.">
+<title>From Portrait to Nightclub | Krzysztof Broniszewski</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../theme.css">
+<link rel="stylesheet" href="../components/navbar.css">
+<link rel="stylesheet" href="scene-expansion.css">
+<style>body{background:#090909;margin:0}.scene-case{margin-top:50px;margin-bottom:80px}@media(max-width:600px){.scene-case{margin-top:20px}}</style>
+</head>
+<body>
+<div id="shared-navbar"></div>
+<script src="../components/navbar.js" defer></script>
+<main>
+<section class="scene-case" id="portrait-to-nightclub" aria-labelledby="sc-title"><div class="sc-kicker">AI IMAGE EDITING / FIVE-STAGE WORKFLOW</div><h2 id="sc-title">From Portrait<br>to Nightclub</h2><p class="sc-intro">A five-stage ComfyUI image-editing experiment. Starting with a single portrait, the scene evolves through background removal, targeted accessory and environment edits, vertical outpainting, and a final wide-angle nightclub expansion.</p><div class="sc-tags"><span>ComfyUI</span><span>Qwen Image Edit</span><span>Background Removal</span><span>Inpainting</span><span>Outpainting</span></div><div class="sc-steps">
+<article class="sc-step"><div class="sc-media"><img src="assets/01-original.png" alt="Original portrait"></div><div class="sc-copy"><span class="sc-number">01 / SOURCE</span><h3>Original Portrait</h3><p>The starting image establishes the subject's face, hairstyle, tattoo, and one-shoulder sequined dress.</p></div></article>
+<article class="sc-step"><div class="sc-media"><img src="assets/02-background-removal.png" alt="Isolated portrait"></div><div class="sc-copy"><span class="sc-number">02 / SEGMENTATION</span><h3>Background Removal</h3><p>The original environment is removed, isolating the subject for subsequent compositing and image edits.</p></div></article>
+<article class="sc-step"><div class="sc-media"><img src="assets/03-scene-edit.png" alt="Nightclub and accessories"></div><div class="sc-copy"><span class="sc-number">03 / INPAINTING & EDIT</span><h3>Scene & Accessories</h3><p>A colorful nightclub replaces the backdrop. Earrings are changed and a necklace is added while maintaining the subject's recognizable appearance.</p></div></article>
+<article class="sc-step"><div class="sc-media"><img src="assets/04-vertical-outpainting.png" alt="Vertical extension"></div><div class="sc-copy"><span class="sc-number">04 / VERTICAL OUTPAINTING</span><h3>Beyond the Frame</h3><p>The portrait is extended downward to reveal more of the dress and body, with the club lighting and perspective continuing naturally.</p></div></article>
+<article class="sc-step"><div class="sc-media"><img src="assets/05-final-expansion.png" alt="Wide nightclub scene"></div><div class="sc-copy"><span class="sc-number">05 / SCENE OUTPAINTING</span><h3>The Nightclub Comes Alive</h3><p>The canvas expands into a cinematic wide shot. AI generates the surrounding dance floor, partygoers, lighting, and architectural details.</p></div></article></div>
+<div class="sc-result"><div class="sc-result-head"><div><div class="sc-kicker">FINAL COMPOSITION</div><h3>One Portrait. An Entire World.</h3></div><div class="sc-kicker">2048 × 1151</div></div><figure><img src="assets/05-final-expansion.png" alt="Final wide nightclub composition"><figcaption>Final scene after iterative background editing and outpainting. Each intermediate stage is shown above in production order.</figcaption></figure><p class="sc-tech"><strong>Workflow focus:</strong> subject preservation, background removal, localized accessory editing, vertical character extension, and environment outpainting. Generated with ComfyUI and Qwen-based image editing.</p></div></section>
+</main>
+</body>
+</html>
