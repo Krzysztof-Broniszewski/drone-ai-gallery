@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Sci-Fi & Futuristic Art — AI-generated robots, cybernetic portraits and futuristic visual explorations by Krzysztof Broniszewski.">
+  <title>Sci-Fi & Futuristic Art | Krzysztof Broniszewski</title>
+  <link href="../theme.css" rel="stylesheet">
+  <link href="../components/navbar.css" rel="stylesheet">
+</head>
+<body>
+  <div id="shared-navbar"></div>
+  <script src="../components/navbar.js"></script>
+  <main>
+    <section class="page-hero"><div class="container">
+      <span class="eyebrow">Portfolio / AI Art</span>
+      <h1>Sci-Fi &amp; Futuristic Art</h1>
+      <p>Cybernetic portraits, futuristic machines and imaginative worlds — visual experiments created with generative AI.</p>
+      <div class="gold-rule"></div>
+    </div></section>
+    <section class="section"><div class="container">
+      <div class="gallery" id="portfolio-gallery" aria-label="Sci-Fi image gallery"></div>
+    </div></section>
+    <div aria-label="Image preview" aria-modal="true" class="lightbox" id="lightbox" role="dialog">
+      <button aria-label="Close preview" class="lightbox-close" type="button">×</button>
+      <button aria-label="Previous image" class="lightbox-prev" type="button">‹</button>
+      <img alt="">
+      <button aria-label="Next image" class="lightbox-next" type="button">›</button>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <a class="footer-channel" href="https://www.youtube.com/channel/UCCAHD3K9D9tyEpvwcsluTtA" rel="noopener noreferrer" target="_blank">
+      <img alt="King of Drone logo" src="../assets/king-of-drone-logo.svg">
+      <span>KING OF DRONE <span aria-hidden="true">↗</span><small>YOUTUBE CHANNEL</small></span>
+    </a>
+    <span>© <span id="year"></span> KRZYSZTOF BRONISZEWSKI</span>
+    <span>CREATED WITH VISION · POWERED BY TECHNOLOGY</span>
+  </footer>
+  <script defer src="../site.js"></script>
+  <script defer src="gallery.js"></script>
+</body>
+</html>
