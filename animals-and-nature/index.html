@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Animals & Nature — AI-generated animal portraits and nature-inspired visual artwork by Krzysztof Broniszewski.">
+  <title>Animals & Nature | Krzysztof Broniszewski</title>
+  <link href="../theme.css" rel="stylesheet">
+  <link href="../components/navbar.css" rel="stylesheet">
+</head>
+<body>
+  <div id="shared-navbar"></div>
+  <script src="../components/navbar.js"></script>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Portfolio / AI Art</span>
+        <h1>Animals &amp; Nature</h1>
+        <p>A collection of AI-generated animal portraits, cinematic wildlife imagery and nature-inspired visual explorations.</p>
+        <div class="gold-rule"></div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="gallery" id="portfolio-gallery"
+             data-gallery-folder="animals-and-nature/assets/thumbs"
+             data-gallery-full-folder="animals-and-nature/assets/full"
+             data-gallery-label="ANIMALS &amp; NATURE"></div>
+      </div>
+    </section>
+    <div aria-label="Image preview" class="lightbox" id="lightbox" role="dialog">
+      <button aria-label="Close preview" class="lightbox-close">×</button>
+      <button aria-label="Previous image" class="lightbox-prev">‹</button>
+      <img alt="">
+      <button aria-label="Next image" class="lightbox-next">›</button>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <a class="footer-channel" href="https://www.youtube.com/channel/UCCAHD3K9D9tyEpvwcsluTtA" rel="noopener noreferrer" target="_blank">
+      <img alt="King of Drone logo" src="../assets/king-of-drone-logo.svg">
+      <span>KING OF DRONE <span aria-hidden="true">↗</span><small>YOUTUBE CHANNEL</small></span>
+    </a>
+    <span>© <span id="year"></span> KRZYSZTOF BRONISZEWSKI</span>
+    <span>CREATED WITH VISION · POWERED BY TECHNOLOGY</span>
+  </footer>
+  <script defer src="../site.js"></script>
+  <script defer src="../gallery.js"></script>
+</body>
+</html>
