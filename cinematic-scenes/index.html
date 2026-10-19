@@ -1,10 +1,200 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080808"><meta name="description" content="Cinematic AI scenes — festive worlds, Parisian stories and gothic editorial compositions by Krzysztof Broniszewski."><title>Cinematic Scenes | Krzysztof Broniszewski</title><link rel="stylesheet" href="../theme.css"><link rel="stylesheet" href="../components/navbar.css"><style>
-.cinematic-intro{max-width:750px;color:#b9b5ac;line-height:1.75}.cinematic-filter{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 36px}.cinematic-filter button{cursor:pointer;border:1px solid rgba(197,163,93,.5);background:transparent;color:#d9c59a;padding:12px 18px;letter-spacing:.07em;font:600 12px Montserrat,sans-serif;transition:.2s}.cinematic-filter button:hover,.cinematic-filter button.active{background:#c5a35d;color:#090909}.cinematic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.cinematic-card{background:#101010;border:1px solid rgba(197,163,93,.3);padding:7px;cursor:pointer;transition:transform .2s,border-color .2s}.cinematic-card:hover{transform:translateY(-4px);border-color:#c5a35d}.cinematic-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#181818}.cinematic-card figcaption{font:600 11px Montserrat,sans-serif;letter-spacing:.1em;color:#c5a35d;padding:12px 7px 6px;text-transform:uppercase}.cinematic-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;z-index:10000;padding:50px 65px}.cinematic-lightbox.open{display:flex}.cinematic-lightbox img{max-width:100%;max-height:90vh;object-fit:contain}.cinematic-lightbox button{position:absolute;background:rgba(15,15,15,.7);border:1px solid #c5a35d;color:#f0d89a;cursor:pointer;font-size:32px;width:48px;height:48px}.cinematic-close{top:15px;right:20px}.cinematic-prev{left:10px;top:50%;transform:translateY(-50%)}.cinematic-next{right:10px;top:50%;transform:translateY(-50%)}body.cinematic-locked{overflow:hidden}@media(max-width:800px){.cinematic-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}@media(max-width:480px){.cinematic-grid{grid-template-columns:1fr}.cinematic-lightbox{padding:55px 44px}.cinematic-lightbox button{width:38px;height:42px;font-size:24px}}
-</style></head><body><div id="shared-navbar"></div><script src="../components/navbar.js"></script><main><section class="page-hero"><div class="container"><span class="eyebrow">Portfolio / AI Art &amp; Visuals</span><h1>Cinematic Scenes</h1><p>AI-generated cinematic environments, seasonal stories and atmospheric visual concepts.</p><div class="gold-rule"></div></div></section><section class="section"><div class="container"><p class="cinematic-intro">A collection of AI-assisted visual storytelling — from festive Christmas atmospheres to Paris-inspired scenes and gothic Wednesday-style portraits.</p><div class="cinematic-filter" role="group" aria-label="Filter images"><button class="active" data-filter="all" aria-pressed="true">ALL SCENES</button><button data-filter="christmas" aria-pressed="false">CHRISTMAS SCENES</button><button data-filter="paris-wednesday" aria-pressed="false">PARIS &amp; WEDNESDAY</button></div><div class="cinematic-grid" id="cinematic-gallery"></div></div></section><div class="cinematic-lightbox" id="cinematic-lightbox" role="dialog" aria-modal="true" aria-label="Image preview"><button class="cinematic-close" aria-label="Close preview">×</button><button class="cinematic-prev" aria-label="Previous image">‹</button><img alt=""><button class="cinematic-next" aria-label="Next image">›</button></div></main><footer class="site-footer"><a class="footer-channel" href="https://www.youtube.com/channel/UCCAHD3K9D9tyEpvwcsluTtA" rel="noopener noreferrer" target="_blank"><img alt="King of Drone logo" src="../assets/king-of-drone-logo.svg"><span>KING OF DRONE <span aria-hidden="true">↗</span><small>YOUTUBE CHANNEL</small></span></a><span>© <span id="year"></span> KRZYSZTOF BRONISZEWSKI</span><span>CREATED WITH VISION · POWERED BY TECHNOLOGY</span></footer><script defer src="../site.js"></script><script>
-const scenes=[{"thumb":"assets/thumbs/christmas-01.webp","full":"assets/full/christmas-01.webp","category":"christmas","title":"Christmas Scenes 01"},{"thumb":"assets/thumbs/christmas-02.webp","full":"assets/full/christmas-02.webp","category":"christmas","title":"Christmas Scenes 02"},{"thumb":"assets/thumbs/christmas-03.webp","full":"assets/full/christmas-03.webp","category":"christmas","title":"Christmas Scenes 03"},{"thumb":"assets/thumbs/christmas-04.webp","full":"assets/full/christmas-04.webp","category":"christmas","title":"Christmas Scenes 04"},{"thumb":"assets/thumbs/christmas-05.webp","full":"assets/full/christmas-05.webp","category":"christmas","title":"Christmas Scenes 05"},{"thumb":"assets/thumbs/christmas-06.webp","full":"assets/full/christmas-06.webp","category":"christmas","title":"Christmas Scenes 06"},{"thumb":"assets/thumbs/christmas-07.webp","full":"assets/full/christmas-07.webp","category":"christmas","title":"Christmas Scenes 07"},{"thumb":"assets/thumbs/christmas-08.webp","full":"assets/full/christmas-08.webp","category":"christmas","title":"Christmas Scenes 08"},{"thumb":"assets/thumbs/christmas-09.webp","full":"assets/full/christmas-09.webp","category":"christmas","title":"Christmas Scenes 09"},{"thumb":"assets/thumbs/christmas-10.webp","full":"assets/full/christmas-10.webp","category":"christmas","title":"Christmas Scenes 10"},{"thumb":"assets/thumbs/christmas-11.webp","full":"assets/full/christmas-11.webp","category":"christmas","title":"Christmas Scenes 11"},{"thumb":"assets/thumbs/christmas-12.webp","full":"assets/full/christmas-12.webp","category":"christmas","title":"Christmas Scenes 12"},{"thumb":"assets/thumbs/christmas-13.webp","full":"assets/full/christmas-13.webp","category":"christmas","title":"Christmas Scenes 13"},{"thumb":"assets/thumbs/christmas-14.webp","full":"assets/full/christmas-14.webp","category":"christmas","title":"Christmas Scenes 14"},{"thumb":"assets/thumbs/christmas-15.webp","full":"assets/full/christmas-15.webp","category":"christmas","title":"Christmas Scenes 15"},{"thumb":"assets/thumbs/christmas-16.webp","full":"assets/full/christmas-16.webp","category":"christmas","title":"Christmas Scenes 16"},{"thumb":"assets/thumbs/christmas-17.webp","full":"assets/full/christmas-17.webp","category":"christmas","title":"Christmas Scenes 17"},{"thumb":"assets/thumbs/christmas-18.webp","full":"assets/full/christmas-18.webp","category":"christmas","title":"Christmas Scenes 18"},{"thumb":"assets/thumbs/christmas-19.webp","full":"assets/full/christmas-19.webp","category":"christmas","title":"Christmas Scenes 19"},{"thumb":"assets/thumbs/christmas-20.webp","full":"assets/full/christmas-20.webp","category":"christmas","title":"Christmas Scenes 20"},{"thumb":"assets/thumbs/christmas-21.webp","full":"assets/full/christmas-21.webp","category":"christmas","title":"Christmas Scenes 21"},{"thumb":"assets/thumbs/christmas-22.webp","full":"assets/full/christmas-22.webp","category":"christmas","title":"Christmas Scenes 22"},{"thumb":"assets/thumbs/christmas-23.webp","full":"assets/full/christmas-23.webp","category":"christmas","title":"Christmas Scenes 23"},{"thumb":"assets/thumbs/christmas-24.webp","full":"assets/full/christmas-24.webp","category":"christmas","title":"Christmas Scenes 24"},{"thumb":"assets/thumbs/christmas-25.webp","full":"assets/full/christmas-25.webp","category":"christmas","title":"Christmas Scenes 25"},{"thumb":"assets/thumbs/christmas-26.webp","full":"assets/full/christmas-26.webp","category":"christmas","title":"Christmas Scenes 26"},{"thumb":"assets/thumbs/christmas-27.webp","full":"assets/full/christmas-27.webp","category":"christmas","title":"Christmas Scenes 27"},{"thumb":"assets/thumbs/christmas-28.webp","full":"assets/full/christmas-28.webp","category":"christmas","title":"Christmas Scenes 28"},{"thumb":"assets/thumbs/christmas-29.webp","full":"assets/full/christmas-29.webp","category":"christmas","title":"Christmas Scenes 29"},{"thumb":"assets/thumbs/christmas-30.webp","full":"assets/full/christmas-30.webp","category":"christmas","title":"Christmas Scenes 30"},{"thumb":"assets/thumbs/christmas-31.webp","full":"assets/full/christmas-31.webp","category":"christmas","title":"Christmas Scenes 31"},{"thumb":"assets/thumbs/christmas-32.webp","full":"assets/full/christmas-32.webp","category":"christmas","title":"Christmas Scenes 32"},{"thumb":"assets/thumbs/christmas-33.webp","full":"assets/full/christmas-33.webp","category":"christmas","title":"Christmas Scenes 33"},{"thumb":"assets/thumbs/paris-wednesday-01.webp","full":"assets/full/paris-wednesday-01.webp","category":"paris-wednesday","title":"Paris & Wednesday 01"},{"thumb":"assets/thumbs/paris-wednesday-02.webp","full":"assets/full/paris-wednesday-02.webp","category":"paris-wednesday","title":"Paris & Wednesday 02"},{"thumb":"assets/thumbs/paris-wednesday-03.webp","full":"assets/full/paris-wednesday-03.webp","category":"paris-wednesday","title":"Paris & Wednesday 03"},{"thumb":"assets/thumbs/paris-wednesday-04.webp","full":"assets/full/paris-wednesday-04.webp","category":"paris-wednesday","title":"Paris & Wednesday 04"},{"thumb":"assets/thumbs/paris-wednesday-05.webp","full":"assets/full/paris-wednesday-05.webp","category":"paris-wednesday","title":"Paris & Wednesday 05"},{"thumb":"assets/thumbs/paris-wednesday-06.webp","full":"assets/full/paris-wednesday-06.webp","category":"paris-wednesday","title":"Paris & Wednesday 06"},{"thumb":"assets/thumbs/paris-wednesday-07.webp","full":"assets/full/paris-wednesday-07.webp","category":"paris-wednesday","title":"Paris & Wednesday 07"},{"thumb":"assets/thumbs/paris-wednesday-08.webp","full":"assets/full/paris-wednesday-08.webp","category":"paris-wednesday","title":"Paris & Wednesday 08"},{"thumb":"assets/thumbs/paris-wednesday-09.webp","full":"assets/full/paris-wednesday-09.webp","category":"paris-wednesday","title":"Paris & Wednesday 09"},{"thumb":"assets/thumbs/paris-wednesday-10.webp","full":"assets/full/paris-wednesday-10.webp","category":"paris-wednesday","title":"Paris & Wednesday 10"},{"thumb":"assets/thumbs/paris-wednesday-11.webp","full":"assets/full/paris-wednesday-11.webp","category":"paris-wednesday","title":"Paris & Wednesday 11"},{"thumb":"assets/thumbs/paris-wednesday-12.webp","full":"assets/full/paris-wednesday-12.webp","category":"paris-wednesday","title":"Paris & Wednesday 12"},{"thumb":"assets/thumbs/paris-wednesday-13.webp","full":"assets/full/paris-wednesday-13.webp","category":"paris-wednesday","title":"Paris & Wednesday 13"}];const grid=document.getElementById('cinematic-gallery');const overlay=document.getElementById('cinematic-lightbox');const large=overlay.querySelector('img');let visible=scenes,selected=0;
-function render(filter){visible=filter==='all'?scenes:scenes.filter(x=>x.category===filter);grid.replaceChildren();visible.forEach((item,i)=>{const fig=document.createElement('figure');fig.className='cinematic-card';fig.tabIndex=0;fig.setAttribute('role','button');fig.setAttribute('aria-label','View '+item.title);const img=document.createElement('img');img.src=item.thumb;img.alt=item.title;img.loading=i<6?'eager':'lazy';img.decoding='async';const cap=document.createElement('figcaption');cap.textContent=item.title;fig.append(img,cap);fig.addEventListener('click',()=>show(i));fig.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(i)}});grid.append(fig)});}
-function show(i){if(!visible.length)return;selected=(i+visible.length)%visible.length;large.src=visible[selected].full;large.alt=visible[selected].title;overlay.classList.add('open');document.body.classList.add('cinematic-locked');overlay.querySelector('.cinematic-close').focus()}
-function close(){overlay.classList.remove('open');document.body.classList.remove('cinematic-locked');large.removeAttribute('src')}
-document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===btn);b.setAttribute('aria-pressed',String(b===btn))});render(btn.dataset.filter)}));overlay.querySelector('.cinematic-close').addEventListener('click',close);overlay.querySelector('.cinematic-prev').addEventListener('click',()=>show(selected-1));overlay.querySelector('.cinematic-next').addEventListener('click',()=>show(selected+1));overlay.addEventListener('click',e=>{if(e.target===overlay)close()});document.addEventListener('keydown',e=>{if(!overlay.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(selected-1);if(e.key==='ArrowRight')show(selected+1)});render('all');
-</script></body></html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#080808">
+    <meta name="description"
+        content="Cinematic AI scenes — festive worlds, Parisian stories and gothic editorial compositions by Krzysztof Broniszewski.">
+    <title>Cinematic Scenes | Krzysztof Broniszewski</title>
+    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="../components/navbar.css">
+    <style>
+        .cinematic-intro {
+            max-width: 750px;
+            color: #b9b5ac;
+            line-height: 1.75
+        }
+
+        .cinematic-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 30px 0 36px
+        }
+
+        .cinematic-filter button {
+            cursor: pointer;
+            border: 1px solid rgba(197, 163, 93, .5);
+            background: transparent;
+            color: #d9c59a;
+            padding: 12px 18px;
+            letter-spacing: .07em;
+            font: 600 12px Montserrat, sans-serif;
+            transition: .2s
+        }
+
+        .cinematic-filter button:hover,
+        .cinematic-filter button.active {
+            background: #c5a35d;
+            color: #090909
+        }
+
+        .cinematic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px
+        }
+
+        .cinematic-card {
+            background: #101010;
+            border: 1px solid rgba(197, 163, 93, .3);
+            padding: 7px;
+            cursor: pointer;
+            transition: transform .2s, border-color .2s
+        }
+
+        .cinematic-card:hover {
+            transform: translateY(-4px);
+            border-color: #c5a35d
+        }
+
+        .cinematic-card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            background: #181818
+        }
+
+        .cinematic-card figcaption {
+            font: 600 11px Montserrat, sans-serif;
+            letter-spacing: .1em;
+            color: #c5a35d;
+            padding: 12px 7px 6px;
+            text-transform: uppercase
+        }
+
+        .cinematic-lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 50px 65px
+        }
+
+        .cinematic-lightbox.open {
+            display: flex
+        }
+
+        .cinematic-lightbox img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain
+        }
+
+        .cinematic-lightbox button {
+            position: absolute;
+            background: rgba(15, 15, 15, .7);
+            border: 1px solid #c5a35d;
+            color: #f0d89a;
+            cursor: pointer;
+            font-size: 32px;
+            width: 48px;
+            height: 48px
+        }
+
+        .cinematic-close {
+            top: 15px;
+            right: 20px
+        }
+
+        .cinematic-prev {
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+        .cinematic-next {
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+
+        body.cinematic-locked {
+            overflow: hidden
+        }
+
+        @media(max-width:800px) {
+            .cinematic-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 12px
+            }
+        }
+
+        @media(max-width:480px) {
+            .cinematic-grid {
+                grid-template-columns: 1fr
+            }
+
+            .cinematic-lightbox {
+                padding: 55px 44px
+            }
+
+            .cinematic-lightbox button {
+                width: 38px;
+                height: 42px;
+                font-size: 24px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="shared-navbar"></div>
+    <script src="../components/navbar.js"></script>
+    <main>
+        <section class="page-hero">
+            <div class="container"><span class="eyebrow">Portfolio / AI Art &amp; Visuals</span>
+                <h1>Cinematic Scenes</h1>
+                <p>AI-generated cinematic environments, seasonal stories and atmospheric visual concepts.</p>
+                <div class="gold-rule"></div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <p class="cinematic-intro">A collection of AI-assisted visual storytelling — from festive Christmas
+                    atmospheres to Paris-inspired scenes and gothic Wednesday-style portraits.</p>
+                <div class="cinematic-filter" role="group" aria-label="Filter images"><button class="active"
+                        data-filter="all" aria-pressed="true">ALL SCENES</button><button data-filter="christmas"
+                        aria-pressed="false">CHRISTMAS SCENES</button><button data-filter="paris-wednesday"
+                        aria-pressed="false">PARIS &amp; WEDNESDAY</button></div>
+                <div class="cinematic-grid" id="cinematic-gallery"></div>
+            </div>
+        </section>
+        <div class="cinematic-lightbox" id="cinematic-lightbox" role="dialog" aria-modal="true"
+            aria-label="Image preview"><button class="cinematic-close" aria-label="Close preview">×</button><button
+                class="cinematic-prev" aria-label="Previous image">‹</button><img alt=""><button class="cinematic-next"
+                aria-label="Next image">›</button></div>
+    </main>
+    <footer class="site-footer"><a class="footer-channel"
+            href="https://www.youtube.com/channel/UCCAHD3K9D9tyEpvwcsluTtA" rel="noopener noreferrer"
+            target="_blank"><img alt="King of Drone logo" src="../assets/king-of-drone-logo.svg"><span>KING OF DRONE
+                <span aria-hidden="true">↗</span><small>YOUTUBE CHANNEL</small></span></a><span>© <span
+                id="year"></span> KRZYSZTOF BRONISZEWSKI</span><span>CREATED WITH VISION · POWERED BY TECHNOLOGY</span>
+    </footer>
+    <script defer src="../site.js"></script>
+    <script>
+        const scenes = [{ "thumb": "assets/thumbs/christmas-01.webp", "full": "assets/full/christmas-01.webp", "category": "christmas", "title": "Christmas Scenes 01" }, { "thumb": "assets/thumbs/christmas-02.webp", "full": "assets/full/christmas-02.webp", "category": "christmas", "title": "Christmas Scenes 02" }, { "thumb": "assets/thumbs/christmas-03.webp", "full": "assets/full/christmas-03.webp", "category": "christmas", "title": "Christmas Scenes 03" }, { "thumb": "assets/thumbs/christmas-04.webp", "full": "assets/full/christmas-04.webp", "category": "christmas", "title": "Christmas Scenes 04" }, { "thumb": "assets/thumbs/christmas-05.webp", "full": "assets/full/christmas-05.webp", "category": "christmas", "title": "Christmas Scenes 05" }, { "thumb": "assets/thumbs/christmas-06.webp", "full": "assets/full/christmas-06.webp", "category": "christmas", "title": "Christmas Scenes 06" }, { "thumb": "assets/thumbs/christmas-07.webp", "full": "assets/full/christmas-07.webp", "category": "christmas", "title": "Christmas Scenes 07" }, { "thumb": "assets/thumbs/christmas-08.webp", "full": "assets/full/christmas-08.webp", "category": "christmas", "title": "Christmas Scenes 08" }, { "thumb": "assets/thumbs/christmas-09.webp", "full": "assets/full/christmas-09.webp", "category": "christmas", "title": "Christmas Scenes 09" }, { "thumb": "assets/thumbs/christmas-10.webp", "full": "assets/full/christmas-10.webp", "category": "christmas", "title": "Christmas Scenes 10" }, { "thumb": "assets/thumbs/christmas-11.webp", "full": "assets/full/christmas-11.webp", "category": "christmas", "title": "Christmas Scenes 11" }, { "thumb": "assets/thumbs/christmas-12.webp", "full": "assets/full/christmas-12.webp", "category": "christmas", "title": "Christmas Scenes 12" }, { "thumb": "assets/thumbs/christmas-13.webp", "full": "assets/full/christmas-13.webp", "category": "christmas", "title": "Christmas Scenes 13" }, { "thumb": "assets/thumbs/christmas-14.webp", "full": "assets/full/christmas-14.webp", "category": "christmas", "title": "Christmas Scenes 14" }, { "thumb": "assets/thumbs/christmas-15.webp", "full": "assets/full/christmas-15.webp", "category": "christmas", "title": "Christmas Scenes 15" }, { "thumb": "assets/thumbs/christmas-16.webp", "full": "assets/full/christmas-16.webp", "category": "christmas", "title": "Christmas Scenes 16" }, { "thumb": "assets/thumbs/christmas-17.webp", "full": "assets/full/christmas-17.webp", "category": "christmas", "title": "Christmas Scenes 17" }, { "thumb": "assets/thumbs/christmas-18.webp", "full": "assets/full/christmas-18.webp", "category": "christmas", "title": "Christmas Scenes 18" }, { "thumb": "assets/thumbs/christmas-19.webp", "full": "assets/full/christmas-19.webp", "category": "christmas", "title": "Christmas Scenes 19" }, { "thumb": "assets/thumbs/christmas-20.webp", "full": "assets/full/christmas-20.webp", "category": "christmas", "title": "Christmas Scenes 20" }, { "thumb": "assets/thumbs/christmas-21.webp", "full": "assets/full/christmas-21.webp", "category": "christmas", "title": "Christmas Scenes 21" }, { "thumb": "assets/thumbs/christmas-22.webp", "full": "assets/full/christmas-22.webp", "category": "christmas", "title": "Christmas Scenes 22" }, { "thumb": "assets/thumbs/christmas-23.webp", "full": "assets/full/christmas-23.webp", "category": "christmas", "title": "Christmas Scenes 23" }, { "thumb": "assets/thumbs/christmas-24.webp", "full": "assets/full/christmas-24.webp", "category": "christmas", "title": "Christmas Scenes 24" }, { "thumb": "assets/thumbs/christmas-25.webp", "full": "assets/full/christmas-25.webp", "category": "christmas", "title": "Christmas Scenes 25" }, { "thumb": "assets/thumbs/christmas-26.webp", "full": "assets/full/christmas-26.webp", "category": "christmas", "title": "Christmas Scenes 26" }, { "thumb": "assets/thumbs/christmas-27.webp", "full": "assets/full/christmas-27.webp", "category": "christmas", "title": "Christmas Scenes 27" }, { "thumb": "assets/thumbs/christmas-28.webp", "full": "assets/full/christmas-28.webp", "category": "christmas", "title": "Christmas Scenes 28" }, { "thumb": "assets/thumbs/christmas-29.webp", "full": "assets/full/christmas-29.webp", "category": "christmas", "title": "Christmas Scenes 29" }, { "thumb": "assets/thumbs/christmas-30.webp", "full": "assets/full/christmas-30.webp", "category": "christmas", "title": "Christmas Scenes 30" }, { "thumb": "assets/thumbs/christmas-31.webp", "full": "assets/full/christmas-31.webp", "category": "christmas", "title": "Christmas Scenes 31" }, { "thumb": "assets/thumbs/christmas-32.webp", "full": "assets/full/christmas-32.webp", "category": "christmas", "title": "Christmas Scenes 32" }, { "thumb": "assets/thumbs/christmas-33.webp", "full": "assets/full/christmas-33.webp", "category": "christmas", "title": "Christmas Scenes 33" }, { "thumb": "assets/thumbs/paris-wednesday-01.webp", "full": "assets/full/paris-wednesday-01.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 01" }, { "thumb": "assets/thumbs/paris-wednesday-02.webp", "full": "assets/full/paris-wednesday-02.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 02" }, { "thumb": "assets/thumbs/paris-wednesday-03.webp", "full": "assets/full/paris-wednesday-03.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 03" }, { "thumb": "assets/thumbs/paris-wednesday-04.webp", "full": "assets/full/paris-wednesday-04.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 04" }, { "thumb": "assets/thumbs/paris-wednesday-05.webp", "full": "assets/full/paris-wednesday-05.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 05" }, { "thumb": "assets/thumbs/paris-wednesday-06.webp", "full": "assets/full/paris-wednesday-06.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 06" }, { "thumb": "assets/thumbs/paris-wednesday-07.webp", "full": "assets/full/paris-wednesday-07.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 07" }, { "thumb": "assets/thumbs/paris-wednesday-08.webp", "full": "assets/full/paris-wednesday-08.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 08" }, { "thumb": "assets/thumbs/paris-wednesday-09.webp", "full": "assets/full/paris-wednesday-09.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 09" }, { "thumb": "assets/thumbs/paris-wednesday-10.webp", "full": "assets/full/paris-wednesday-10.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 10" }, { "thumb": "assets/thumbs/paris-wednesday-11.webp", "full": "assets/full/paris-wednesday-11.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 11" }, { "thumb": "assets/thumbs/paris-wednesday-12.webp", "full": "assets/full/paris-wednesday-12.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 12" }, { "thumb": "assets/thumbs/paris-wednesday-13.webp", "full": "assets/full/paris-wednesday-13.webp", "category": "paris-wednesday", "title": "Paris & Wednesday 13" }]; const grid = document.getElementById('cinematic-gallery'); const overlay = document.getElementById('cinematic-lightbox'); const large = overlay.querySelector('img'); let visible = scenes, selected = 0;
+        function render(filter) { visible = filter === 'all' ? scenes : scenes.filter(x => x.category === filter); grid.replaceChildren(); visible.forEach((item, i) => { const fig = document.createElement('figure'); fig.className = 'cinematic-card'; fig.tabIndex = 0; fig.setAttribute('role', 'button'); fig.setAttribute('aria-label', 'View ' + item.title); const img = document.createElement('img'); img.src = item.thumb; img.alt = item.title; img.loading = i < 6 ? 'eager' : 'lazy'; img.decoding = 'async'; const cap = document.createElement('figcaption'); cap.textContent = item.title; fig.append(img, cap); fig.addEventListener('click', () => show(i)); fig.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(i) } }); grid.append(fig) }); }
+        function show(i) { if (!visible.length) return; selected = (i + visible.length) % visible.length; large.src = visible[selected].full; large.alt = visible[selected].title; overlay.classList.add('open'); document.body.classList.add('cinematic-locked'); overlay.querySelector('.cinematic-close').focus() }
+        function close() { overlay.classList.remove('open'); document.body.classList.remove('cinematic-locked'); large.removeAttribute('src') }
+        document.querySelectorAll('[data-filter]').forEach(btn => btn.addEventListener('click', () => { document.querySelectorAll('[data-filter]').forEach(b => { b.classList.toggle('active', b === btn); b.setAttribute('aria-pressed', String(b === btn)) }); render(btn.dataset.filter) })); overlay.querySelector('.cinematic-close').addEventListener('click', close); overlay.querySelector('.cinematic-prev').addEventListener('click', () => show(selected - 1)); overlay.querySelector('.cinematic-next').addEventListener('click', () => show(selected + 1)); overlay.addEventListener('click', e => { if (e.target === overlay) close() }); document.addEventListener('keydown', e => { if (!overlay.classList.contains('open')) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(selected - 1); if (e.key === 'ArrowRight') show(selected + 1) }); render('all');
+    </script>
+</body>
+
+</html>
