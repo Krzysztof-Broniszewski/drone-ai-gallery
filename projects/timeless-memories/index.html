@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Timeless Memories — AI photo colorization, restoration and modern reimagination with Qwen and ComfyUI. A creative project by Krzysztof Broniszewski.">
+  <title>Timeless Memories — AI Photo Restoration | Krzysztof Broniszewski</title>
+  <link rel="stylesheet" href="../../theme.css">
+  <link rel="stylesheet" href="../../components/navbar.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+  <div id="shared-navbar"></div>
+  <script src="../../components/navbar.js" defer></script>
+  <main class="tm-main">
+    <section class="tm-hero">
+      <div class="tm-hero-photo"><img src="assets/reimagined-02.png" alt="Contemporary AI reimagination of three people standing together on a country path" fetchpriority="high"></div>
+      <div class="tm-hero-shade"></div>
+      <div class="tm-hero-content">
+        <p class="tm-kicker">GENERATIVE AI · PHOTO RESTORATION · QWEN</p>
+        <h1>TIMELESS<br><em>MEMORIES</em></h1>
+        <div class="tm-rule"></div>
+        <p class="tm-hero-sub">From Past to Present</p>
+        <p class="tm-hero-description">One archival photograph. Four visual chapters. A journey from monochrome memories to a contemporary interpretation — powered by generative AI.</p>
+        <a class="tm-cta" href="#transformation">EXPLORE THE TRANSFORMATION <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="tm-hero-index">01 — 04 / VISUAL EVOLUTION</div>
+    </section>
+
+    <section class="tm-section tm-intro" id="story">
+      <div class="tm-section-meta">01 / THE CONCEPT</div>
+      <div class="tm-intro-grid"><h2>Giving memories<br><span>new life.</span></h2><div><p>Old photographs hold moments that deserve to be seen again. <strong>Timeless Memories</strong> explores how generative AI can add colour to a historical image and reinterpret its atmosphere for a contemporary visual aesthetic.</p><p>The starting point is a black-and-white photograph of three people on a rural path. Using <strong>Qwen in ComfyUI</strong>, I developed a sequence of colour and modernised variations while retaining the original scene as the creative reference.</p><p class="tm-note">AI-generated colours and modern details are artistic interpretations, not verified historical facts.</p></div></div>
+    </section>
+
+    <section class="tm-section tm-compare-section" id="transformation">
+      <div class="tm-section-meta">02 / INTERACTIVE COMPARISON</div>
+      <div class="tm-section-heading"><h2>Then <span>&</span> Now</h2><p>Drag the handle to reveal the contemporary reinterpretation.</p></div>
+      <div class="tm-compare" id="tm-compare" style="--split:50%">
+        <img class="tm-compare-base" src="assets/reimagined-02.png" alt="Modern AI reinterpretation of the archival photograph">
+        <div class="tm-compare-overlay"><img src="assets/original.jpg" alt="Original black-and-white archival photograph"></div>
+        <div class="tm-compare-line" aria-hidden="true"><span>↔</span></div>
+        <span class="tm-compare-tag tm-left">ORIGINAL</span><span class="tm-compare-tag tm-right">2026 REIMAGINED</span>
+        <input class="tm-compare-range" type="range" min="0" max="100" value="50" aria-label="Reveal original photograph or 2026 reinterpretation">
+      </div>
+      <p class="tm-caption">The composition is based on the archival reference. Generated versions may alter fine details.</p>
+    </section>
+
+    <section class="tm-section tm-gallery-section" id="gallery">
+      <div class="tm-section-meta">03 / THE VISUAL JOURNEY</div>
+      <div class="tm-section-heading"><h2>Four chapters.<br><span>One moment.</span></h2><p>Explore the original photograph and three AI-generated results.</p></div>
+      <div class="tm-gallery">
+        <figure class="tm-tile"><button class="tm-image-button" type="button" data-image="assets/original.jpg" data-caption="01 — The Original"><img src="assets/original.jpg" alt="Original black-and-white archival photograph" loading="lazy"><span>VIEW FULL IMAGE ↗</span></button><figcaption><span>01 / ARCHIVE</span><h3>The Original</h3><p>The authentic starting point: an aged monochrome print with the character and texture of an archival photograph.</p></figcaption></figure>
+        <figure class="tm-tile"><button class="tm-image-button" type="button" data-image="assets/colorized.png" data-caption="02 — AI Colorization"><img src="assets/colorized.png" alt="AI colourized version of the old photograph" loading="lazy"><span>VIEW FULL IMAGE ↗</span></button><figcaption><span>02 / COLOUR</span><h3>Bringing Back Colour</h3><p>AI-assisted colourization gives the scene a new sense of warmth while preserving its historical visual character.</p></figcaption></figure>
+        <figure class="tm-tile"><button class="tm-image-button" type="button" data-image="assets/reimagined-01.png" data-caption="03 — Contemporary Interpretation"><img src="assets/reimagined-01.png" alt="First contemporary AI reinterpretation of the archival image" loading="lazy"><span>VIEW FULL IMAGE ↗</span></button><figcaption><span>03 / REIMAGINE</span><h3>A New Perspective</h3><p>A refined contemporary look, with enhanced clarity, naturalistic lighting and reinterpreted textures.</p></figcaption></figure>
+        <figure class="tm-tile"><button class="tm-image-button" type="button" data-image="assets/reimagined-02.png" data-caption="04 — 2026 Reimagination"><img src="assets/reimagined-02.png" alt="Second contemporary AI reinterpretation of the archival image" loading="lazy"><span>VIEW FULL IMAGE ↗</span></button><figcaption><span>04 / 2026</span><h3>Past Meets Present</h3><p>An alternative final interpretation: a vintage moment presented with the visual polish of a modern photograph.</p></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="tm-section tm-process" id="workflow">
+      <div class="tm-section-meta">04 / CREATIVE PROCESS</div><div class="tm-section-heading"><h2>Behind the <span>image.</span></h2><p>A reference-driven workflow built around Qwen and ComfyUI.</p></div>
+      <div class="tm-steps"><article><span>01</span><h3>Archival Reference</h3><p>Begin with the original black-and-white photograph as the visual foundation.</p></article><article><span>02</span><h3>AI Colorization</h3><p>Use Qwen in ComfyUI to explore plausible colours and preserve the recognisable scene.</p></article><article><span>03</span><h3>Modern Reimagination</h3><p>Generate contemporary interpretations with updated rendering, lighting and detail.</p></article><article><span>04</span><h3>Visual Selection</h3><p>Compare variants side by side and select the images that best tell the story.</p></article></div>
+      <div class="tm-tools"><span>TOOLS & TECHNIQUES</span><strong>ComfyUI</strong><strong>Qwen</strong><strong>Image-to-Image</strong><strong>AI Colorization</strong><strong>Generative Retouching</strong></div>
+    </section>
+    <section class="tm-outro"><p>THE PAST, REIMAGINED</p><h2>Every photograph<br>has another story.</h2><a href="../../index.html">← BACK TO PORTFOLIO</a></section>
+  </main>
+  <dialog class="tm-lightbox" id="tm-lightbox" aria-label="Expanded photograph"><button class="tm-close" type="button" aria-label="Close image">×</button><img alt="Expanded project photograph"><p></p></dialog>
+  <script src="project.js" defer></script>
+</body>
+</html>
