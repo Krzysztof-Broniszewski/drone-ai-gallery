@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080808"><meta name="description" content="Portraits & Characters — AI-generated editorial portraits, fantasy characters and fashion-inspired visual art by Krzysztof Broniszewski.">
-<title>Portraits & Characters | Krzysztof Broniszewski</title>
+<meta name="theme-color" content="#080808"><meta name="description" content="Portraits & Fashion — AI portraits, beauty and editorial imagery by Krzysztof Broniszewski.">
+<title>Portraits & Fashion | Krzysztof Broniszewski</title>
 <link rel="stylesheet" href="../theme.css"><link rel="stylesheet" href="../components/navbar.css">
 <style>
-.portrait-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.portrait-item{padding:0;border:1px solid rgba(197,163,93,.25);background:#101010;cursor:pointer;text-align:left;color:#f0d89a;overflow:hidden;transition:border-color .2s,transform .2s}.portrait-item:hover{border-color:#c5a35d;transform:translateY(-3px)}.portrait-item img{display:block;width:100%;height:360px;object-fit:cover}.portrait-item span{display:block;padding:14px 16px;font:500 12px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase}.portrait-viewer{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:65px 65px 48px}.portrait-viewer.is-open{display:flex}.portrait-viewer img{max-width:100%;max-height:100%;object-fit:contain}.portrait-viewer button{position:absolute;border:1px solid rgba(197,163,93,.5);background:#111;color:#f0d89a;cursor:pointer;font-size:30px;width:45px;height:45px}.portrait-close{top:15px;right:20px}.portrait-prev{left:12px;top:50%}.portrait-next{right:12px;top:50%}.portrait-counter{position:absolute;bottom:13px;color:#c5a35d;font:12px Montserrat,sans-serif;letter-spacing:.15em}@media(max-width:900px){.portrait-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.portrait-item img{height:300px}}@media(max-width:560px){.portrait-gallery{gap:12px}.portrait-item img{height:225px}.portrait-item span{font-size:10px;padding:10px}.portrait-viewer{padding:65px 43px 55px}.portrait-viewer button{width:36px;height:40px}}
+.portrait-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.portrait-item{padding:0;border:1px solid rgba(197,163,93,.25);background:#101010;cursor:pointer;text-align:left;color:#f0d89a;overflow:hidden;transition:border-color .2s,transform .2s}.portrait-item:hover{border-color:#c5a35d;transform:translateY(-3px)}.portrait-item img{display:block;width:100%;height:360px;object-fit:contain;background:#101010}.portrait-item span{display:block;padding:14px 16px;font:500 12px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase}.portrait-status{margin:0 0 24px;color:#c5a35d;font:12px Montserrat,sans-serif;letter-spacing:.08em}.portrait-viewer{position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:65px 65px 48px}.portrait-viewer.is-open{display:flex}.portrait-viewer img{max-width:100%;max-height:100%;object-fit:contain}.portrait-viewer button{position:absolute;border:1px solid rgba(197,163,93,.5);background:#111;color:#f0d89a;cursor:pointer;font-size:30px;width:45px;height:45px}.portrait-close{top:15px;right:20px}.portrait-prev{left:12px;top:50%}.portrait-next{right:12px;top:50%}.portrait-counter{position:absolute;bottom:13px;color:#c5a35d;font:12px Montserrat,sans-serif;letter-spacing:.15em}@media(max-width:900px){.portrait-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.portrait-item img{height:300px}}@media(max-width:560px){.portrait-gallery{gap:12px}.portrait-item img{height:225px}.portrait-item span{font-size:10px;padding:10px}.portrait-viewer{padding:65px 43px 55px}.portrait-viewer button{width:36px;height:40px}}
 </style>
 </head>
 <body>
 <div id="shared-navbar"></div><script src="../components/navbar.js"></script>
-<main><section class="page-hero"><div class="container"><span class="eyebrow">Portfolio / AI Art</span><h1>Portraits &amp; Characters</h1><p>AI-generated editorial portraits, imaginative characters and fashion-inspired visual storytelling.</p><div class="gold-rule"></div></div></section>
-<section class="section"><div class="container"><div class="portrait-gallery" id="portrait-gallery">
+<main><section class="page-hero"><div class="container"><span class="eyebrow">Portfolio / AI Art</span><h1>Portraits &amp; Fashion</h1><p>AI portraits, beauty and editorial imagery.</p><div class="gold-rule"></div></div></section>
+<section class="section"><div class="container"><p class="portrait-status" id="portrait-status" role="status" aria-live="polite">Loading gallery…</p><div class="portrait-gallery" id="portrait-gallery">
 <button class="portrait-item" type="button" data-index="0" aria-label="Open Golden Butterfly"><img src="assets/thumbs/01.webp" alt="Golden Butterfly — AI-generated portrait" loading="lazy" decoding="async"><span>Golden Butterfly</span></button>
 <button class="portrait-item" type="button" data-index="1" aria-label="Open Violet Muse I"><img src="assets/thumbs/02.webp" alt="Violet Muse I — AI-generated portrait" loading="lazy" decoding="async"><span>Violet Muse I</span></button>
 <button class="portrait-item" type="button" data-index="2" aria-label="Open Violet Muse II"><img src="assets/thumbs/03.webp" alt="Violet Muse II — AI-generated portrait" loading="lazy" decoding="async"><span>Violet Muse II</span></button>
@@ -29,6 +29,114 @@
 <footer class="site-footer"><a class="footer-channel" href="https://www.youtube.com/channel/UCCAHD3K9D9tyEpvwcsluTtA" rel="noopener noreferrer" target="_blank"><img alt="King of Drone logo" src="../assets/king-of-drone-logo.svg"><span>KING OF DRONE <span aria-hidden="true">↗</span><small>YOUTUBE CHANNEL</small></span></a><span>© <span id="year"></span> KRZYSZTOF BRONISZEWSKI</span><span>CREATED WITH VISION · POWERED BY TECHNOLOGY</span></footer>
 <script defer src="../site.js"></script>
 <script>
-(()=>{const gallery=document.getElementById('portrait-gallery'),viewer=document.getElementById('portrait-viewer'),img=document.getElementById('portrait-full'),counter=document.getElementById('portrait-counter'),items=[...gallery.querySelectorAll('.portrait-item')];let active=0;const show=i=>{active=(i+items.length)%items.length;img.src=`assets/full/${String(active+1).padStart(2,'0')}.webp`;img.alt=items[active].querySelector('img').alt;counter.textContent=`${active+1} / ${items.length}`;};const close=()=>{viewer.classList.remove('is-open');viewer.setAttribute('aria-hidden','true');img.removeAttribute('src');document.body.style.overflow='';items[active].focus();};items.forEach((item,i)=>item.addEventListener('click',()=>{show(i);viewer.classList.add('is-open');viewer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';viewer.querySelector('.portrait-close').focus();}));viewer.querySelector('.portrait-close').addEventListener('click',close);viewer.querySelector('.portrait-prev').addEventListener('click',()=>show(active-1));viewer.querySelector('.portrait-next').addEventListener('click',()=>show(active+1));viewer.addEventListener('click',e=>{if(e.target===viewer)close();});document.addEventListener('keydown',e=>{if(!viewer.classList.contains('is-open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(active-1);if(e.key==='ArrowRight')show(active+1);});})();
+(() => {
+  const gallery = document.getElementById('portrait-gallery');
+  const status = document.getElementById('portrait-status');
+  const viewer = document.getElementById('portrait-viewer');
+  const img = document.getElementById('portrait-full');
+  const counter = document.getElementById('portrait-counter');
+  const fallback = [...gallery.querySelectorAll('.portrait-item')].map((el, index) => ({
+    title: el.querySelector('span').textContent.trim(),
+    thumb: el.querySelector('img').getAttribute('src'),
+    full: `assets/full/${String(index + 1).padStart(2, '0')}.webp`
+  }));
+  let photos = fallback;
+  let active = 0;
+  let previousFocus = null;
+  const accepted = /\.(webp|jpe?g|png|avif)$/i;
+  const prettyName = name => name.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').trim();
+  const encodePath = path => path.split('/').map(encodeURIComponent).join('/');
+  const makeCard = (photo, index) => {
+    const button = document.createElement('button');
+    button.className = 'portrait-item';
+    button.type = 'button';
+    button.setAttribute('aria-label', `Open ${photo.title}`);
+    const image = document.createElement('img');
+    image.src = photo.thumb;
+    image.alt = `${photo.title} — AI-generated portrait`;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+    image.addEventListener('error', () => {
+      if (image.src !== new URL(photo.full, document.baseURI).href) image.src = photo.full;
+    }, {once: true});
+    const label = document.createElement('span');
+    label.textContent = photo.title;
+    button.append(image, label);
+    button.addEventListener('click', () => open(index));
+    return button;
+  };
+  const render = () => {
+    gallery.replaceChildren(...photos.map(makeCard));
+    status.textContent = `${photos.length} images`;
+  };
+  const show = index => {
+    if (!photos.length) return;
+    active = (index + photos.length) % photos.length;
+    img.src = photos[active].full;
+    img.alt = photos[active].title;
+    counter.textContent = `${active + 1} / ${photos.length}`;
+  };
+  const open = index => {
+    previousFocus = document.activeElement;
+    show(index);
+    viewer.classList.add('is-open');
+    viewer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    viewer.querySelector('.portrait-close').focus();
+  };
+  const close = () => {
+    viewer.classList.remove('is-open');
+    viewer.setAttribute('aria-hidden', 'true');
+    img.removeAttribute('src');
+    document.body.style.overflow = '';
+    previousFocus?.focus();
+  };
+  viewer.querySelector('.portrait-close').addEventListener('click', close);
+  viewer.querySelector('.portrait-prev').addEventListener('click', () => show(active - 1));
+  viewer.querySelector('.portrait-next').addEventListener('click', () => show(active + 1));
+  viewer.addEventListener('click', event => { if (event.target === viewer) close(); });
+  document.addEventListener('keydown', event => {
+    if (!viewer.classList.contains('is-open')) return;
+    if (event.key === 'Escape') close();
+    if (event.key === 'ArrowLeft') show(active - 1);
+    if (event.key === 'ArrowRight') show(active + 1);
+  });
+  // GitHub Pages nie pozwala na wylistowanie folderu po HTTP.
+  // Odczytujemy więc listę plików z publicznego repozytorium.
+  // Obsługuje zarówno /portraits/, jak i /portraits-and-characters/.
+  async function loadFromGitHub() {
+    const repo = 'Krzysztof-Broniszewski/drone-ai-gallery';
+    const currentFolder = location.pathname.split('/').filter(Boolean).pop();
+    const folder = (currentFolder === 'portraits' || currentFolder === 'portraits-and-characters')
+      ? currentFolder : 'portraits-and-characters';
+    const root = `${folder}/assets`;
+    const api = `https://api.github.com/repos/${repo}/contents/${encodePath(root + '/full')}`;
+    try {
+      const response = await fetch(api, {headers: {Accept: 'application/vnd.github+json'}, cache: 'no-store'});
+      if (!response.ok) throw new Error(`GitHub API: ${response.status}`);
+      const files = await response.json();
+      if (!Array.isArray(files)) throw new Error('Invalid GitHub API response');
+      const images = files.filter(file => file.type === 'file' && accepted.test(file.name))
+        .sort((a, b) => a.name.localeCompare(b.name, undefined, {numeric: true}));
+      if (!images.length) throw new Error('No images found');
+      const base = 'assets/';
+      photos = images.map(file => {
+        const known = fallback.find(photo => photo.full.split('/').pop() === file.name);
+        return {
+          title: known?.title || prettyName(file.name),
+          full: `${base}full/${encodeURIComponent(file.name)}`,
+          thumb: `${base}thumbs/${encodeURIComponent(file.name)}`
+        };
+      });
+      render();
+    } catch (error) {
+      // Offline / rate limit / missing GitHub folder: existing 11 photos still work.
+      status.textContent = `${fallback.length} images · GitHub listing unavailable`;
+      console.warn('Portraits: using local fallback gallery.', error);
+    }
+  }
+  render();
+  loadFromGitHub();
+})();
 </script>
 </body></html>

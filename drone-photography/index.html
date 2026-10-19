@@ -1,2 +1,63 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#080808" name="theme-color"/><meta content="Krzysztof Broniszewski — generative AI, cinematic commercials, drone photography and filmmaking." name="description"/><title>Drone Photography | Krzysztof Broniszewski</title><link href="../theme.css" rel="stylesheet"/><link href="../components/navbar.css" rel="stylesheet"/></head><body><div id="shared-navbar"></div><script src="../components/navbar.js"></script><main><section class="page-hero"><div class="container"><span class="eyebrow">Portfolio / Visual gallery</span><h1>Drone Photography</h1><p>Aerial photography — landscapes, architecture and the world from a different perspective.</p><div class="gold-rule"></div></div></section><section class="section"><div class="container"><div class="gallery" data-gallery-folder="images/drone" data-gallery-label="DRONE" id="portfolio-gallery"></div></div></section><div aria-label="Image preview" class="lightbox" id="lightbox" role="dialog"><button aria-label="Close preview" class="lightbox-close">×</button><button aria-label="Previous image" class="lightbox-prev">‹</button><img alt=""/><button aria-label="Next image" class="lightbox-next">›</button></div></main><footer class="site-footer"><a class="footer-channel" href="https://www.youtube.com/channel/UCCAHD3K9D9tyEpvwcsluTtA" rel="noopener noreferrer" target="_blank"><img alt="King of Drone logo" src="../assets/king-of-drone-logo.svg"/><span>KING OF DRONE <span aria-hidden="true">↗</span><small>YOUTUBE CHANNEL</small></span></a><span>© <span id="year"></span> KRZYSZTOF BRONISZEWSKI</span><span>CREATED WITH VISION · POWERED BY TECHNOLOGY</span></footer><script defer="" src="../site.js"></script><script defer="" src="../gallery.js"></script></body></html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#080808" name="theme-color"/><meta content="Krzysztof Broniszewski — generative AI, cinematic commercials, drone photography and filmmaking." name="description"/><title>Drone Photography | Krzysztof Broniszewski</title><link href="../theme.css" rel="stylesheet"/><link href="../components/navbar.css" rel="stylesheet"/></head><body><div id="shared-navbar"></div><script src="../components/navbar.js"></script><main><section class="page-hero"><div class="container"><span class="eyebrow">Portfolio / Visual gallery</span><h1>Drone Photography</h1><p>Aerial photography — landscapes, architecture and the world from a different perspective.</p><div class="gold-rule"></div></div></section><section class="section"><div class="container"><div class="gallery" id="portfolio-gallery"></div></div></section><div aria-label="Image preview" class="lightbox" id="lightbox" role="dialog"><button aria-label="Close preview" class="lightbox-close">×</button><button aria-label="Previous image" class="lightbox-prev">‹</button><img alt=""/><button aria-label="Next image" class="lightbox-next">›</button></div></main><footer class="site-footer"><a class="footer-channel" href="https://www.youtube.com/channel/UCCAHD3K9D9tyEpvwcsluTtA" rel="noopener noreferrer" target="_blank"><img alt="King of Drone logo" src="../assets/king-of-drone-logo.svg"/><span>KING OF DRONE <span aria-hidden="true">↗</span><small>YOUTUBE CHANNEL</small></span></a><span>© <span id="year"></span> KRZYSZTOF BRONISZEWSKI</span><span>CREATED WITH VISION · POWERED BY TECHNOLOGY</span></footer><script defer="" src="../site.js"></script><script>
+(() => {
+  const files = ["DJI_20250525104217_0024_D-2.webp", "DJI_20250528155343_0060_D-3.webp", "DJI_20250614134730_0007_D-1.webp", "DJI_20250614213129_0060_D-2.webp", "DJI_20250624204509_0030_D-1.webp", "DJI_20250706135811_0004_D-1.webp", "DJI_20250803143323_0001_D-2.webp", "DJI_20250803143708_0005_D-1.webp", "DJI_20250809200319_0039_D-HDR-1.webp", "DJI_20250809221532_0054_D-1.webp", "DJI_20251031184743_0337_D.webp", "DJI_20251106184604_0543_D-2-3.webp"];
+  const gallery = document.getElementById('portfolio-gallery');
+  const lightbox = document.getElementById('lightbox');
+  const preview = lightbox.querySelector('img');
+  const title = file => file.replace(/\.webp$/i, '').replace(/[_-]+/g, ' ');
+  const path = (type, file) => `assets/${type}/${encodeURIComponent(file)}`;
+  let current = 0;
+  const open = index => {
+    current = (index + files.length) % files.length;
+    preview.src = path('full', files[current]);
+    preview.alt = title(files[current]);
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  const close = () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    preview.removeAttribute('src');
+  };
+  files.forEach((file, index) => {
+    const figure = document.createElement('figure');
+    figure.className = 'gallery-item';
+    const media = document.createElement('div');
+    media.className = 'gallery-media';
+    const img = document.createElement('img');
+    img.src = path('thumbs', file);
+    img.alt = title(file);
+    img.loading = index < 3 ? 'eager' : 'lazy';
+    img.decoding = 'async';
+    media.append(img);
+    const caption = document.createElement('figcaption');
+    caption.className = 'gallery-caption';
+    const name = document.createElement('span');
+    name.textContent = title(file);
+    const chip = document.createElement('span');
+    chip.className = 'gallery-chip';
+    chip.textContent = 'DRONE';
+    caption.append(name, chip);
+    figure.append(media, caption);
+    figure.tabIndex = 0;
+    figure.setAttribute('role', 'button');
+    figure.setAttribute('aria-label', `View ${title(file)}`);
+    figure.addEventListener('click', () => open(index));
+    figure.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(index); }
+    });
+    gallery.append(figure);
+  });
+  lightbox.querySelector('.lightbox-close').addEventListener('click', close);
+  lightbox.querySelector('.lightbox-prev').addEventListener('click', () => open(current - 1));
+  lightbox.querySelector('.lightbox-next').addEventListener('click', () => open(current + 1));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') open(current - 1);
+    if (e.key === 'ArrowRight') open(current + 1);
+  });
+})();
+</script></body></html>
