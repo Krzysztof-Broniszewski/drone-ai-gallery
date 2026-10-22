@@ -811,10 +811,3 @@ button {
     border: none !important;
     outline: none;
 }
-
-/* CV embedded page only — does not alter other portfolio pages */
-.cv-section{padding:32px 0 48px}
-.cv-section .container{width:min(1220px,calc(100% - 48px))}
-.cv-section .cv-frame{display:block;width:100%;height:1100px;min-height:0;border:1px solid var(--gold);background:#090807;overflow:hidden}
-.cv-section .cv-fallback{margin-top:18px}
-@media(max-width:620px){.cv-section{padding:14px 0 30px}.cv-section .container{width:calc(100% - 24px)}}
