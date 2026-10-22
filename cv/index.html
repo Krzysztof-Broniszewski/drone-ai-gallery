@@ -1,2 +1,19 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#080808" name="theme-color"/><meta content="Krzysztof Broniszewski — generative AI, cinematic commercials, drone photography and filmmaking." name="description"/><title>CV / Resume | Krzysztof Broniszewski</title><link href="../theme.css" rel="stylesheet"/><link href="../components/navbar.css" rel="stylesheet"/></head><body><div id="shared-navbar"></div><script src="../components/navbar.js"></script><main><section class="page-hero"><div class="container"><span class="eyebrow">Profile / Experience</span><h1>CV &amp; Resume</h1><p>Experience, professional background and technical skills.</p><div class="gold-rule"></div></div></section><section class="section"><div class="container"><iframe class="cv-frame" loading="lazy" src="https://krzysztof-broniszewski.github.io/krzysztof-cv" title="Krzysztof Broniszewski CV"></iframe><p class="cv-fallback"><a class="button" href="https://krzysztof-broniszewski.github.io/krzysztof-cv" rel="noopener noreferrer" target="_blank">Open CV in new tab ↗</a></p></div></section></main><footer class="site-footer"><a class="footer-channel" href="https://www.youtube.com/channel/UCCAHD3K9D9tyEpvwcsluTtA" rel="noopener noreferrer" target="_blank"><img alt="King of Drone logo" src="../assets/king-of-drone-logo.svg"/><span>KING OF DRONE <span aria-hidden="true">↗</span><small>YOUTUBE CHANNEL</small></span></a><span>© <span id="year"></span> KRZYSZTOF BRONISZEWSKI</span><span>CREATED WITH VISION · POWERED BY TECHNOLOGY</span></footer><script defer="" src="../site.js"></script></body></html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#080808" name="theme-color"/><meta content="Krzysztof Broniszewski — generative AI, cinematic commercials, drone photography and filmmaking." name="description"/><title>CV / Resume | Krzysztof Broniszewski</title><link href="../theme.css" rel="stylesheet"/><link href="../components/navbar.css" rel="stylesheet"/><style>
+/* CV page only — leave shared theme untouched */
+.cv-portfolio-section { padding: 32px 0 65px; }
+.cv-portfolio-section .cv-frame { display:block; width:100%; height:1000px; min-height:0; border:1px solid #c5a35d; background:#080808; overflow:hidden; }
+@media (max-width: 620px) { .cv-portfolio-section { padding: 18px 0 45px; } }
+</style></head><body><div id="shared-navbar"></div><script src="../components/navbar.js"></script><main><section class="section cv-portfolio-section"><div class="container"><iframe id="cv-frame" class="cv-frame" loading="eager" scrolling="no" src="https://krzysztof-broniszewski.github.io/krzysztof-cv/?embed=1" title="Krzysztof Broniszewski CV"></iframe><p class="cv-fallback"><a class="button" href="https://krzysztof-broniszewski.github.io/krzysztof-cv" rel="noopener noreferrer" target="_blank">Open CV in new tab ↗</a></p></div></section></main><footer class="site-footer"><a class="footer-channel" href="https://www.youtube.com/channel/UCCAHD3K9D9tyEpvwcsluTtA" rel="noopener noreferrer" target="_blank"><img alt="King of Drone logo" src="../assets/king-of-drone-logo.svg"/><span>KING OF DRONE <span aria-hidden="true">↗</span><small>YOUTUBE CHANNEL</small></span></a><span>© <span id="year"></span> KRZYSZTOF BRONISZEWSKI</span><span>CREATED WITH VISION · POWERED BY TECHNOLOGY</span></footer><script>
+(() => {
+  const frame = document.getElementById('cv-frame');
+  const allowedOrigin = 'https://krzysztof-broniszewski.github.io';
+  window.addEventListener('message', (event) => {
+    if (event.origin !== allowedOrigin || event.source !== frame.contentWindow) return;
+    if (!event.data || event.data.type !== 'KRZYSZTOF_CV_HEIGHT') return;
+    const height = Number(event.data.height);
+    if (!Number.isFinite(height) || height < 200 || height > 50000) return;
+    frame.style.height = Math.ceil(height + 3) + 'px';
+  });
+})();
+</script><script defer="" src="../site.js"></script></body></html>
